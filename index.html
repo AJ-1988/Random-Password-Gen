@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Random Password Generator - Home</title>
+</head>
+<body>
+    <main>
+        <section id="app-container"> <!-- App Container -->
+            <span class="copied-alert"><p>Password Copied</p> <i class="far fa-check-circle"></i></span>
+
+            <div class="intro-header">
+                <h1>Random Password Generator</h1>
+                <p>Generater a password in seconds!</p>
+            </div>
+            
+            <div class="container container-top">
+                <div class="result-container">
+                    <span id="result"></span>
+                    <button class="btn" id="clipboard">
+                        <i class="far fa-clipboard"></i> 
+                    </button>
+                </div>
+                <div class="password-strength-bar-container">
+                    <div class="password-strength-bar"></div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="settings">
+                    <div class="settings-left"> 
+                        <h4 class="setting-left-heading">Options</h4>
+                        <div class="setting">
+                            <label>Uppercase</label> 
+                            <label class="switch">
+                                <input type="checkbox" id="uppercase" checked />
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+                        <div class="setting">
+                            <label>Lowercase</label> 
+                            <label class="switch">
+                                <input type="checkbox" id="lowercase" checked />
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+                        <div class="setting">
+                            <label>Numbers</label> 
+                            <label class="switch">
+                                <input type="checkbox" id="numbers" checked />
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+                        <div class="setting">
+                            <label>Symbols</label>
+                            <label class="switch">
+                                <input type="checkbox" id="symbols" checked />
+                                <span class="slider-toggle"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="settings-right">
+                            <div class="setting">
+                                <h4 class="setting-right-heading">Password length</h4>
+                                <input type="number" id="length" min='1' max='50' value='10' step='1' />
+                                <div class="slider-container">
+                                    <div class="slider-bar"></div>
+                                    <input type="range" id="slider" min='1' max='50' value='10'/>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            <button class="btn btn-large" id="generate">
+                Generate Password
+            </button>
+        </section> <!-- End App Container -->
+
+        <section id="password-tips"> <!-- Start Pasword Tips Container -->
+            <div class="password-tips-container">
+                <h1 class="intro-header-tips">Password Tips</h1>
+
+                <div class="password-tip-paragraphs">
+                    <h2><span class="password-tip-number-circle">1.</span> Avoid Using Personal Information</h2>
+                    <p>If there is information about you that is easily discoverable—such as your birthday, anniversary, address, city of birth, high school, and relatives’ and pets’ names—do not include them in your password. These only make your password easier to guess. On that note, if you are required to choose security questions and answers when creating an online account, select ones that are not obvious to someone browsing your social media accounts.</p>
+                </div>
+
+                <div class="password-tip-paragraphs">
+                    <h2><span class="password-tip-number-circle">2.</span> Make Your Passwords Long.</h2>
+                    <p>LHackers use multiple methods for trying to get into your accounts. The most rudimentary way is to personally target you and manually type in letters, numbers, and symbols to guess your password. The more advanced method is to use what is known as a “brute force attack.” In this technique, a computer program runs through every possible combination of letters, numbers, and symbols as fast as possible to crack your password. The longer and more complex your password is, the longer this process takes. Passwords that are three characters long take less than a second to crack.</p>
+                </div>
+
+                <div class="password-tip-paragraphs">
+                    <h2><span class="password-tip-number-circle">3.</span> Make Your Passwords A Nonsense Phrase</h2>
+                    <p>Long passwords are good; long passwords that include random words and phrases are better. If your letter combinations are not in the dictionary, your phrases are not in published literature, and none of it is grammatically correct, they will be harder to crack. Also do not use characters that are sequential on a keyboard such as numbers in order or the widely used “qwerty.”</p>
+                </div>
+
+                <div class="password-tip-paragraphs">
+                    <h2><span class="password-tip-number-circle">4.</span> Include Numbers, Symbols, Uppercase And Lowercase Letters.</h2>
+                    <p>Randomly mix up symbols and numbers with letters. You could substitute a zero for the letter O or @ for the letter A, for example. If your password is a phrase, consider capitalizing the first letter of each new word, which will be easier for you to remember.</p>
+                </div>
+
+                <div class="password-tip-paragraphs">
+                    <h2><span class="password-tip-number-circle">5.</span> Do Not Reuse Passwords.</h2>
+                    <p>When hackers complete large-scale hacks, as they have recently done with popular email servers, the lists of compromised email addresses and passwords are often leaked online. If your account is compromised and you use this email address and password combination across multiple sites, your information can be easily used to get into any of these other accounts. Use unique passwords for everything.</p>
+                </div>
+
+                <div class="password-tip-paragraphs">
+                    <h2><span class="password-tip-number-circle">6.</span> Keep Your Passwords A Secrete.</h2>
+                    <p>Don’t give your passwords to anyone else. Don’t type your password into your device if you are within plain sight of other people. And do not plaster your password on a sticky note on your work computer. If you’re storing a list of your passwords—or even better, a password hint sheet—on your computer in a document file, name the file something random so it isn’t a dead giveaway to snoopers.</p>
+                </div>
+
+                <div class="password-tip-paragraphs">
+                    <h2><span class="password-tip-number-circle">7.</span> Change Your Password Frequently</h2>
+                    <p>The more sensitive your information is, the more often you should change your password. Once it is changed, do not use that password again for a very long time.</p>
+                </div>
+            </div>
+        </section> <!-- End Pasword Tips Container -->
+    </main>
+    <footer id="footer">
+        <p class="copyright-container">&copy; <a href="/">Random Password Generator </a> <span id="copyright-container-year"></span></p>
+        <ul class="privacy-policy-container">
+            <li>|</li>
+            <li><a id="privacy-policy" href="#">Privacy Policy</a></li>
+            <li>|</li>
+            <li><a id="terms-of-service">Terms Of Service</a></li>
+        </ul>
+    </footer>
+
+    <div id="modal" class="modal modal-privacy" data-modal="modal-privacy"> <!-- Modal Privacy Policy -->
+        <div class="modal-inner">
+            <div class="modal-head">
+                <h2 class="modal-h2">Privacy Policy</h2>
+                <span class="modal-close far fa-times-circle"></span>
+            </div>
+            <div class="modal-body">
+                <div class="interior-container">
+                    <h1>Privacy Policy for Random Password Generator</h1>
+        
+                    <p>At Random Password Generator, accessible from www.random-password-generator.net, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Random Password Generator and how we use it.</p>
+        
+                    <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
+        
+                    <h2>General Data Protection Regulation (GDPR)</h2>
+                    <p>We are a Data Controller of your information.</p>
+        
+                    <p>Random Password Generator legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:</p>
+                    <ul>
+                        <li>Random Password Generator needs to perform a contract with you</li>
+                        <li>You have given Random Password Generator permission to do so</li>
+                        <li>Processing your personal information is in Random Password Generator legitimate interests</li>
+                        <li>Random Password Generator needs to comply with the law</li>
+                    </ul>
+                    
+                    <p>Random Password Generator will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies. Our Privacy Policy was generated with the help of <a href="https://www.gdprprivacynotice.com/">GDPR Privacy Policy Generator</a> and the <a href="https://www.privacypolicygenerator.org">Privacy Policy Generator</a>.</p> 
+        
+                    <p>If you are a resident of the European Economic Area (EEA), you have certain data protection rights. If you wish to be informed what Personal Information we hold about you and if you want it to be removed from our systems, please contact us.</p>
+                    <p>In certain circumstances, you have the following data protection rights:</p>
+                    <ul>
+                        <li>The right to access, update or to delete the information we have on you.</li>
+                        <li>The right of rectification.</li> 
+                        <li>The right to object.</li>
+                        <li>The right of restriction.</li>
+                        <li>The right to data portability</li>
+                        <li>The right to withdraw consent</li>
+                    </ul>
+        
+                    <h2>Log Files</h2>
+        
+                    <p>Random Password Generator follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
+        
+                    <h2>Cookies and Web Beacons</h2>
+        
+                    <p>Like any other website, Random Password Generator uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+        
+                    <h2>Google DoubleClick DART Cookie</h2>
+        
+                    <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
+        
+        
+                    <h2>Privacy Policies</h2>
+        
+                    <P>You may consult this list to find the Privacy Policy for each of the advertising partners of Random Password Generator.</p>
+        
+                    <p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Random Password Generator, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
+        
+                    <p>Note that Random Password Generator has no access to or control over these cookies that are used by third-party advertisers.</p>
+        
+                    <h2>Third Party Privacy Policies</h2>
+        
+                    <p>Random Password Generator's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. You may find a complete list of these Privacy Policies and their links here: Privacy Policy Links.</p>
+        
+                    <p>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites. What Are Cookies?</p>
+        
+                    <h2>Children's Information</h2>
+        
+                    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+        
+                    <p>Random Password Generator does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+        
+                    <h2>Online Privacy Policy Only</h2>
+        
+                    <p>Our Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Random Password Generator. This policy is not applicable to any information collected offline or via channels other than this website.</p>
+        
+                    <h2>Consent</h2>
+        
+                    <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Modal Privacy Policy -->
+
+    <div id="modal" class="modal modal-terms" data-modal="modal-terms"> <!-- Terms And Conditions -->
+        <div class="modal-inner">
+            <div class="modal-head">
+                <h2 class="modal-h2">Terms And Conditions</h2>
+                <span class="modal-close far fa-times-circle"></span>
+            </div>
+            <div class="modal-body">
+                <div class="interior-container">
+                    <h1>Terms And Conditions for Random Password Generator</h1>
+        
+                    <p>At Random Password Generator, accessible from www.random-password-generator.net, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Random Password Generator and how we use it.</p>
+        
+                    <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
+        
+                    <h2>General Data Protection Regulation (GDPR)</h2>
+                    <p>We are a Data Controller of your information.</p>
+        
+                    <p>Random Password Generator legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:</p>
+                    <ul>
+                        <li>Random Password Generator needs to perform a contract with you</li>
+                        <li>You have given Random Password Generator permission to do so</li>
+                        <li>Processing your personal information is in Random Password Generator legitimate interests</li>
+                        <li>Random Password Generator needs to comply with the law</li>
+                    </ul>
+                    
+                    <p>Random Password Generator will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies. Our Privacy Policy was generated with the help of <a href="https://www.gdprprivacynotice.com/">GDPR Privacy Policy Generator</a> and the <a href="https://www.privacypolicygenerator.org">Privacy Policy Generator</a>.</p> 
+        
+                    <p>If you are a resident of the European Economic Area (EEA), you have certain data protection rights. If you wish to be informed what Personal Information we hold about you and if you want it to be removed from our systems, please contact us.</p>
+                    <p>In certain circumstances, you have the following data protection rights:</p>
+                    <ul>
+                        <li>The right to access, update or to delete the information we have on you.</li>
+                        <li>The right of rectification.</li> 
+                        <li>The right to object.</li>
+                        <li>The right of restriction.</li>
+                        <li>The right to data portability</li>
+                        <li>The right to withdraw consent</li>
+                    </ul>
+        
+                    <h2>Log Files</h2>
+        
+                    <p>Random Password Generator follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
+        
+                    <h2>Cookies and Web Beacons</h2>
+        
+                    <p>Like any other website, Random Password Generator uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+        
+                    <h2>Google DoubleClick DART Cookie</h2>
+        
+                    <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
+        
+        
+                    <h2>Privacy Policies</h2>
+        
+                    <P>You may consult this list to find the Privacy Policy for each of the advertising partners of Random Password Generator.</p>
+        
+                    <p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Random Password Generator, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
+        
+                    <p>Note that Random Password Generator has no access to or control over these cookies that are used by third-party advertisers.</p>
+        
+                    <h2>Third Party Privacy Policies</h2>
+        
+                    <p>Random Password Generator's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. You may find a complete list of these Privacy Policies and their links here: Privacy Policy Links.</p>
+        
+                    <p>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites. What Are Cookies?</p>
+        
+                    <h2>Children's Information</h2>
+        
+                    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+        
+                    <p>Random Password Generator does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+        
+                    <h2>Online Privacy Policy Only</h2>
+        
+                    <p>Our Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Random Password Generator. This policy is not applicable to any information collected offline or via channels other than this website.</p>
+        
+                    <h2>Consent</h2>
+        
+                    <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Terms And Condition -->
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

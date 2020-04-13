@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:400,500&display=swap');
+
+/* Variables*/
+:root {
+	--main-color:#39434f;
+	--accent-color: #98c1d9;
+	--accent-hover-color: #81b7d6;
+	--main-font: 'Lato', sans-serif;
+	--sub-font: 'Roboto', sans-serif;
+}
+
+/* Global */
+* {
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+}
+
+body {
+	position: relative;
+	background-color: #fff;
+}
+
+body, html {
+	margin: 0px;
+	padding: 0px;
+}
+
+section {
+	padding: 4%;
+}
+
+/************************************
+	    App Section Styles
+************************************/
+
+/* App Contianer */
+#app-container {
+	background: linear-gradient(rgba(57,67,79,0.85), rgba(57,67,79,0.95)), url("../img/background.jpg");
+	background-size: cover;
+	background-position: center;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;;
+	min-height: 100vh;
+	position: relative;
+}
+
+/* Copied Alert */
+.copied-alert {
+	width: 100%;
+	max-width: 322px;
+	background:	#28a745;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 1em;
+	transform: translate(-50%);
+	padding: 10px;
+	border-radius: 40px;
+	transition: opacity 0.4s ease-in-out;
+	opacity: 0;
+}
+
+.copied-alert.active {
+	opacity: 1;
+}
+
+.copied-alert p {
+	display: inline-block;
+	vertical-align: 7px;
+	font-size: 20px;
+	font-family: var(--sub-font);
+}
+
+.copied-alert i {
+	color: #fff;
+	font-size: 35px;
+	margin-left: 10px;
+}
+
+.intro-header {
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+.intro-header h1 {
+	font-family: var(--sub-font);
+	font-size: 35px;
+	text-align: center;
+}
+
+.intro-header p {
+	text-align: center;
+	font-size: 19px;
+	font-weight: bold;
+	color: var(--accent-color);
+	margin-top: 5px;
+}
+
+/* Contianer */
+.container {
+	background-color: var(--main-color);
+	box-shadow: 0px 2px 10px rgba(20, 20, 20, 0.452);
+	padding: 20px;
+	max-width: 950px;
+	width: 100%;
+}
+
+.container-top {
+	max-width: 950px;
+	width: 100%;
+	margin-bottom: 50px;
+	position: relative;
+}
+
+.password-strength-bar-container {
+	background: #333;
+	width: 100%;
+	height: 14px;
+	border-bottom-right-radius: 20px;
+	position: absolute;
+	left: 0px;
+	bottom: -33px;
+}
+
+.password-strength-bar {
+	width: 0%;
+	height: 100%;
+	border-bottom-right-radius: 20px;
+	transition: width 0.8s ease-in-out;
+}
+
+.result-container {
+	background-color: rgba(0, 0, 0, 0.4);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	font-size: 18px;
+	letter-spacing: 1px;
+	padding: 12px 10px;
+	height: 50px;
+	width: 100%;
+}
+
+.result-container #result {
+  	word-wrap: break-word;
+	max-width: calc(100% - 40px);
+}
+
+.result-container .btn {
+	font-size: 20px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	height: 40px;
+	width: 40px;
+}
+
+.btn {
+	border-width: 0px;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	padding: 8px 12px;
+	background-color: var(--accent-color);
+}
+
+.btn:hover {
+	background: var(--accent-hover-color);
+}
+
+.btn-large {
+	display: block;
+	width: 100%;
+	max-width: 275px;
+	margin-top: 30px;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.settings {
+	display: flex;
+	justify-content: space-between;
+}
+
+.setting {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 15px 0;
+}
+
+.setting label{
+	font-family: var(--sub-font)
+}
+
+/* Left Settings Container */
+.settings .settings-left {
+	margin-left: 45px;
+}
+
+.setting-left-heading {
+	margin-top: 15px;
+	font-family: var(--sub-font);
+	font-size: 18px;
+	text-align: center;
+}
+
+/* Right Settings Container */
+.settings .settings-right {
+	width: 335px;
+	margin-right: 8vw;
+}
+
+.setting-right-heading {
+	font-family: var(--sub-font);
+	font-size: 18px;
+}
+
+.settings .settings-right .setting {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Number Box */
+.settings .settings-right .setting #length {
+	margin: 12px 0 15px 0;
+	padding: 8px 7px;
+	width: 58px;
+}
+
+/* Range Slider */
+.settings .settings-right .setting .slider-container {
+	width: 100%;
+	height: 10px;
+	background: #fff;
+	position: relative;
+	border-radius: 15px;
+}
+
+.settings .settings-right .setting .slider-container .slider-bar {
+	background: var(--accent-color);
+	height: 100%;
+	border-radius: 15px;
+}
+
+.settings .settings-right .setting #slider {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	appearance: none;
+	-webkit-appearance: none;
+	border-radius: 15px;
+}
+
+/* Slider Button Chrome, Opera, Safari, Edge */
+.settings .settings-right .setting #slider::-webkit-slider-thumb { 
+	background: var(--accent-color);
+	width: 29px;
+	height: 29px;
+	border-radius: 100%;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+/* Slider Button Mozilla */
+.settings .settings-right .setting #slider::-moz-range-thumb {
+	background: var(--accent-color);
+	width: 29px;
+	height: 29px;
+	border-radius: 100%;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+/* Slider Button Chrome, Opera, Safari, Edge - Hover */
+.settings .settings-right .setting #slider::-webkit-slider-thumb:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 7px 1px var(--accent-hover-color);
+}
+
+/* Slider Button Mozilla - Hover*/
+.settings .settings-right .setting #slider::-moz-range-thumb:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 7px 1px var(--accent-hover-color);
+}
+
+/* Toggle Switches */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 56px;
+	height: 29px;
+	margin-left: 10px;
+}
+
+.switch input {
+	width: 0px;
+	height: 0px;
+	opacity: 0;
+}
+
+/* Switch Grey */
+.switch .slider-toggle {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 34px;
+}
+
+.switch .slider-toggle:hover {
+	background-color: #c0c0c0;
+}
+
+.switch .slider-toggle:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 1px;
+	bottom: 2px;
+	background-color:#fff;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 50%;
+}
+
+/* Swtich Color */
+.switch input:checked + .slider-toggle {
+	background-color: var(--accent-color);
+}
+
+.switch input:checked + .slider-toggle:hover {
+	background-color: var(--accent-hover-color);
+}
+
+.switch input:focus + .slider-toggle {
+	box-shadow: 0 0 1px var(--accent-color);
+}
+  
+.switch input:checked + .slider-toggle:before {
+	left: 4px;
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+	.settings {
+		flex-direction: column-reverse;
+	}
+
+	.settings .settings-right {
+		align-self: center;
+		margin-right: unset;
+	}
+
+	.settings .settings-left {
+		margin-left: unset;
+	}
+
+	.settings .settings-right .setting {
+		margin-top: 2px;
+		margin-bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.settings .settings-right {
+		width: 95%;
+	}
+
+	.floating-btn {
+		right: 10px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.result-container {
+		font-size: 14px;
+	}
+}
+
+/************************************
+	    Password Tips Section
+************************************/
+
+/* Intro Header Password Tips */
+.intro-header-tips {
+	width: 100%;
+	text-align: center;
+	font-size: 35px;
+	font-family: var(--sub-font);
+	color: var(--accent-color);
+}
+
+.password-tips-container {
+	max-width: 950px;
+	margin: auto;
+}
+
+/* Password Tips Paragraphs */
+.password-tip-paragraphs {
+	margin: 50px 0;
+	padding: 0 20px;
+}
+
+.password-tip-number-circle {
+	background: var(--accent-color);
+	height: 42px;
+	width: 42px;
+	display: inline-block;
+	border-radius: 100%;
+	text-align: center;
+	padding-top: 4px;
+	padding-left: 2px;
+	color:#fff;
+	margin-right: 10px;
+	margin-left: -17px;
+}
+
+.password-tip-paragraphs h2 {
+	padding-bottom: 10px;
+	font-size: 25px;
+	margin: 0;
+}
+
+.password-tip-paragraphs p {
+	font-size: 17px;
+	line-height: 22px;
+	margin: 0;
+}
+
+/************************************
+	       Footer Section
+************************************/
+#footer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 50px;
+	background: linear-gradient(rgba(57,67,79,0.85), rgba(57,67,79,0.95)), url("../img/background.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+#footer .copyright-container {
+	color: #fff;
+	align-self: flex-end;
+	margin-bottom: 12px;
+	font-size: 16px;
+}
+
+#footer .copyright-container a {
+	font-size: 16px;
+	color: #fff;
+	text-decoration: none;
+}
+
+#footer .copyright-container a:hover {
+	color: var(--accent-color);
+}
+
+#footer .privacy-policy-container {
+	align-self: flex-end;
+	padding: 0;
+	margin-bottom: 12px;
+	margin-left: 10px;
+	list-style: none;
+}
+
+#footer .privacy-policy-container li {
+	display: inline-block;
+	color: #fff;
+	padding: 0 1.5px;
+}
+
+#footer .privacy-policy-container li a {
+	font-size: 16px;
+	color: #fff;
+	text-decoration: none;
+}
+
+#footer .privacy-policy-container li a:hover {
+	color: var(--accent-color);
+}
+
+/************************************
+	    Modal Pop Up Section
+************************************/
+#modal {
+	visibility: hidden;
+	opacity: 0;
+	position: fixed;
+	min-height: 100vh;
+	min-width: 100vw;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(57, 67, 79, 0.9);
+	transition: opacity 0.25s, 2s;
+	z-index: 100;
+	pointer-events: none;
+}
+
+#modal.modal-visible {
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 0.8s, opacity 0.5s;
+	pointer-events: visible;
+}
+
+.modal-inner {
+	width: 100%;
+	height: 100%;
+	transform: translateY(-120%);
+	transition: transform .9s, opacity .8s, 0.5s;
+}
+
+#modal.modal-visible .modal-inner {
+	transform: translateY(0);
+	transition: transform 1s, opacity .9s;
+}
+
+#modal .modal-head {
+	width: 100%;
+	height: 70px;
+	position: relative;
+}
+
+#modal .modal-head .modal-close {
+	color: #fff;
+	position: absolute;
+	right: 30px;
+	top: -8px;
+	display: block;
+	cursor: pointer;
+	font-size: 26px;
+}
+
+#modal .modal-head h2 {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	text-align: center;
+	font-size: 28px;
+	font-family: var(--sub-font);
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+#modal .modal-body {
+	width: 100%;
+	height: 100%;
+	color: #000;
+	background: #fff;
+	max-width: 70%;
+	max-height: 80%;
+	margin: auto;
+	overflow-y: scroll;
+}
+
+#modal .interior-container {
+	width: 90%;
+	margin: auto;
+	padding: 0 3%;
+}
+
+#modal .interior-container h1 {
+	width: 100%;
+	font-family: var(--sub-font);
+	text-align: center;
+	color: var(--accent-color);
+
+}
+
+#modal .interior-container h2 {
+	width: 100%;
+	color: var(--accent-color);
+}
