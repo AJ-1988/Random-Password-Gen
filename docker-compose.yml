@@ -1,0 +1,8 @@
+version: "3"
+services:
+  passgen:
+    container_name: pass-gen
+    restart: always
+    build: .
+    ports: 
+      - '8081:80'
