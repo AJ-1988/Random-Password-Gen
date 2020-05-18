@@ -629,7 +629,7 @@ section {
 #modal .modal-head .modal-close {
 	color: #fff;
 	position: absolute;
-	right: 30px;
+	right: 1.9%;
 	top: -8px;
 	display: block;
 	cursor: pointer;
@@ -683,3 +683,23 @@ section {
 		max-width: 90%;
 	}
 }
+
+/* Modal Mobile Header Terms 530px */
+@media only screen and (max-width: 530px) {
+	#modal.modal-terms .modal-head h2 {
+		font-size: 5.1vw;
+	}
+}
+
+/* Modal Mobile Header 399px */
+@media only screen and (max-width: 450px) {
+	#modal .modal-head h2 {
+		font-size: 7vw;
+	}
+
+	#modal.modal-terms .modal-head h2 {
+		font-size: 7vw;
+		line-height: 7.5vw;
+	}
+}
+

@@ -229,13 +229,9 @@ for (var mc of modalClose) {
 
 // Close Modal Body
 for (var mbc of modalBodyClass) {
-    modalBodyClose(mbc);
-};
-
-function modalBodyClose(mbc) {
     mbc.addEventListener("click", function(e) {
         if(e.target.className == "modal-inner" || e.target.className == "modal-h2"  || e.target.id == "modal") {
-            mbc.classList.remove("modal-visible");
+            this.classList.remove("modal-visible");;
         }
     })
 };
