@@ -530,6 +530,7 @@ section {
 
 #footer .privacy-policy-container {
 	align-self: flex-end;
+	text-align: center;
 	padding: 0;
 	margin-bottom: 12px;
 	margin-left: 10px;
@@ -553,7 +554,7 @@ section {
 }
 
 /*** Footer Mobile 550px ***/
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 850px) {
 	#footer {
 		height: auto;
 		flex-direction: column;

@@ -197,44 +197,58 @@ function getRandomSymbols() {
 }
 
 // Modal
-var modalBody = document.getElementById("modal");
-var footerPrivacy = document.getElementById("privacy-policy");
-var termsoOfService = document.getElementById("terms-of-service");
-var modalClose = document.querySelectorAll(".modal-close");
+window.addEventListener('DOMContentLoaded', function() {
+    var modalBody = document.getElementById("modal");
+    var modalClose = document.querySelectorAll(".modal-close");
+    var modalBodyClass = document.querySelectorAll(".modal");
 
-var modalBodyClass = document.querySelectorAll(".modal");
-
-
-// Modal Open
-var modalPrivacy = document.querySelector(".modal-privacy");
-footerPrivacy.addEventListener("click", function(e) {
-    e.preventDefault();
-    modalPrivacy.classList.add("modal-visible");
-});
-
-var modalTerms = document.querySelector(".modal-terms");
-termsoOfService.addEventListener("click", function(e) {
-    e.preventDefault();
-    modalTerms.classList.add("modal-visible");
-});
-
-// Close Modal
-for (var mc of modalClose) {
-    mc.addEventListener("click", function() {
-        for (var mbc of modalBodyClass) {
-            mbc.classList.remove("modal-visible");
-        }
+    // Modal Open
+    var modalPrivacy = document.querySelector(".modal-privacy");
+    var footerPrivacy = document.getElementById("privacy-policy");
+    footerPrivacy.addEventListener("click", function(e) {
+        e.preventDefault();
+        modalPrivacy.classList.add("modal-visible");
     });
-};
 
-// Close Modal Body
-for (var mbc of modalBodyClass) {
-    mbc.addEventListener("click", function(e) {
-        if(e.target.className == "modal-inner" || e.target.className == "modal-h2"  || e.target.id == "modal") {
-            this.classList.remove("modal-visible");;
-        }
-    })
-};
+    var modalTerms = document.querySelector(".modal-terms");
+    var termsoOfService = document.getElementById("terms-of-service");
+    termsoOfService.addEventListener("click", function(e) {
+        e.preventDefault();
+        modalTerms.classList.add("modal-visible");
+    });
+
+    var modalAboutUs = document.querySelector(".modal-about");
+    var aboutUs = document.getElementById("about-us")
+    aboutUs.addEventListener("click", function(e) {
+        e.preventDefault();
+        modalAboutUs.classList.add("modal-visible");
+    });
+
+    var modalContactUs = document.querySelector(".modal-contact");
+    var contactUs = document.getElementById("contact-us")
+    contactUs.addEventListener("click", function(e) {
+        e.preventDefault();
+        modalContactUs.classList.add("modal-visible");
+    });
+
+    // Close Modal
+    for (var mc of modalClose) {
+        mc.addEventListener("click", function() {
+            for (var mbc of modalBodyClass) {
+                mbc.classList.remove("modal-visible");
+            }
+        });
+    };
+
+    // Close Modal Body
+    for (var mbc of modalBodyClass) {
+        mbc.addEventListener("click", function(e) {
+            if(e.target.className == "modal-inner" || e.target.className == "modal-h2"  || e.target.id == "modal") {
+                this.classList.remove("modal-visible");;
+            }
+        })
+    };
+});
 
 // Copyright Date
 var newdDate = new Date();
